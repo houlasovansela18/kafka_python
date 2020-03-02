@@ -10,7 +10,7 @@ class consumer1(threading.Thread):
 
     def run(self):
         k = 0
-        consumer1 = KafkaConsumer('test2',
+        consumer1 = KafkaConsumer('test5',
                           group_id='my-group',
                           bootstrap_servers=['localhost:9092'])
         for msg in consumer1:
@@ -25,7 +25,7 @@ class consumer2(threading.Thread):
 
     def run(self):
         k = 0
-        consumer2 = KafkaConsumer('test2',
+        consumer2 = KafkaConsumer('test5',
                           group_id='my-group',
                           bootstrap_servers=['localhost:9092'])
         for msg in consumer2:
@@ -40,10 +40,10 @@ class consumer3(threading.Thread):
 
     def run(self):
         k = 0
-        consumer2 = KafkaConsumer('test2',
+        consumer3 = KafkaConsumer('test5',
                           group_id='my-group',
                           bootstrap_servers=['localhost:9092'])
-        for msg in consumer2:
+        for msg in consumer3:
             k+=1
             with open("detection_frame/demo3/image"+str(k)+".png","wb") as f:
                 f.write(msg.value)
@@ -55,10 +55,10 @@ class consumer4(threading.Thread):
 
     def run(self):
         k = 0
-        consumer2 = KafkaConsumer('test2',
+        consumer4 = KafkaConsumer('test5',
                           group_id='my-group',
                           bootstrap_servers=['localhost:9092'])
-        for msg in consumer2:
+        for msg in consumer4:
             k+=1
             with open("detection_frame/demo4/image"+str(k)+".png","wb") as f:
                 f.write(msg.value)
@@ -70,10 +70,10 @@ class consumer5(threading.Thread):
 
     def run(self):
         k = 0
-        consumer2 = KafkaConsumer('test2',
+        consumer5 = KafkaConsumer('test5',
                           group_id='my-group',
                           bootstrap_servers=['localhost:9092'])
-        for msg in consumer2:
+        for msg in consumer5:
             k+=1
             with open("detection_frame/demo5/image"+str(k)+".png","wb") as f:
                 f.write(msg.value)
