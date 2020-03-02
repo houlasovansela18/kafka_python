@@ -9,7 +9,7 @@ class producer:
         with open(self.image_path,"rb") as f:
             data = f.read()
         producer = KafkaProducer(bootstrap_servers='localhost:9092')
-        future = producer.send('LPR_test',data)
+        future = producer.send('test2',data)
         result = future.get(timeout=60)
         print(result)
 
